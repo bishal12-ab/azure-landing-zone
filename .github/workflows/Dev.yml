@@ -29,6 +29,9 @@ jobs:
     - name: Terraform init
       run: terraform init
       working-directory: enviroments/dev
+    - name: Terraform fmt
+      run: terraform fmt
+      working-directory: enviroments/dev
     - name: Terraform plan
       run: terraform plan
       working-directory: enviroments/dev
