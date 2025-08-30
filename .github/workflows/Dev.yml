@@ -1,0 +1,6 @@
+name: "infra_pipeline"
+on: workflow_dispatch
+jobs:
+  terraform-job:
+    runs-on: ubuntu-latest
+  
