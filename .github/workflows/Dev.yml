@@ -10,14 +10,20 @@ jobs:
       uses: little-core-labs/install-terraform@v2.0.0
       with:
        version: 1.13.0
-          
-    - name: Set Azure Credentials as Environment Variables
-      run: echo "Azure Credentials Loaded"
-      env:
-        ARM_TENANT_ID: ${{ secrets.ARM_TENANT_ID }}
-        ARM_CLIENT_ID: ${{ secrets.ARM_CLIENT_ID }}
-        ARM_CLIENT_SECRET: ${{ secrets.ARM_CLIENT_SECRET }}
-        ARM_SUBSCRIPTION_ID: ${{ secrets.ARM_SUBSCRIPTION_ID }}
+    - name: Azure Login
+      uses: Azure/login@v2.3.0
+      with:
+        client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_ 48382ebb-5b83-454b-acd4-fd5d6116f926 }}
+        tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_ccd94d3f-bbc6-4eb2-b7a1-b35b1d9e7049}}
+        subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_b23d929c-5d14-4285-a3cd-840ec9c55cde }}
+     
+    # - name: Set Azure Credentials as Environment Variables
+    #   run: echo "Azure Credentials Loaded"
+    #   env:
+    #     ARM_TENANT_ID: ${{ secrets.ARM_TENANT_ID }}
+    #     ARM_CLIENT_ID: ${{ secrets.ARM_CLIENT_ID }}
+    #     ARM_CLIENT_SECRET: ${{ secrets.ARM_CLIENT_SECRET }}
+    #     ARM_SUBSCRIPTION_ID: ${{ secrets.ARM_SUBSCRIPTION_ID }}
     
     - name: Terraform init
       run: terraform init
