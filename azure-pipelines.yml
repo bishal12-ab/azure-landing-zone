@@ -1,0 +1,63 @@
+trigger: none
+pool: 
+  vmimage: ubuntu-latest
+stages:
+  - stage: terraforminitandplan
+    displayName: terraform init and plan
+    jobs:
+      - job: terraforminitandplan
+        displayName: terraform init and plan
+        steps:
+        - task: TerraformInstaller@1
+          inputs:
+            terraformVersion: 'latest'
+        - task: TerraformTaskV4@4
+          inputs:
+            provider: 'azurerm'
+            command: 'init'
+            workingDirectory: '$(System.DefaultWorkingDirectory)/enviroments/dev'
+            backendServiceArm: 'landing zone service conection'
+            backendAzureRmResourceGroupName: 'private-end-rg'
+            backendAzureRmStorageAccountName: 'filestorage123445'
+            backendAzureRmContainerName: 'picfilecont'
+            backendAzureRmKey: 'terraform.tfvars'
+        - task: TerraformTaskV4@4
+          inputs:
+            provider: 'azurerm'
+            command: 'plan'
+            workingDirectory: '$(System.DefaultWorkingDirectory)/enviroments/dev'
+            environmentServiceNameAzureRM: 'landing zone service conection'
+
+  - stage: terraformapply
+    displayName: terraform apply
+    dependsOn: terraforminitandplan
+    jobs:
+      - job: manualvalidation
+        displayName: manual validation
+        pool: server
+        steps:
+        - task: ManualValidation@1
+          inputs:
+            notifyUsers: 'bishalsas180@gmail.com'
+            approvers: 'bishalsas180@gmail.com'
+            instructions: 'plese check my code'
+      - job: terraformapply
+        displayName: terraform apply
+        dependsOn: manualvalidation
+        steps:
+        - task: TerraformTaskV4@4
+          inputs:
+            provider: 'azurerm'
+            command: 'init'
+            workingDirectory: '$(System.DefaultWorkingDirectory)/enviroments/dev'
+            backendServiceArm: 'landing zone service conection'
+            backendAzureRmResourceGroupName: 'private-end-rg'
+            backendAzureRmStorageAccountName: 'filestorage123445'
+            backendAzureRmContainerName: 'picfilecont'
+            backendAzureRmKey: 'terraform.tfvars'
+        - task: TerraformTaskV4@4
+          inputs:
+            provider: 'azurerm'
+            command: 'apply'
+            workingDirectory: '$(System.DefaultWorkingDirectory)/enviroments/dev'
+            environmentServiceNameAzureRM: 'landing zone service conection'
