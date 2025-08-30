@@ -13,9 +13,9 @@ jobs:
     - name: Azure Login
       uses: Azure/login@v2.3.0
       with:
-        client-id: ${{ secrets.ARM_CLIENT_ID_48382ebb-5b83-454b-acd4-fd5d6116f926}}
-        tenant-id: ${{secrets.ARM_TENANT_ID_ccd94d3f-bbc6-4eb2-b7a1-b35b1d9e7049}}
-        subscription-id: ${{secrets.ARM_SUBSCRIPTION_ID_b23d929c-5d14-4285-a3cd-840ec9c55cde}}
+        client-id: ${{ secrets.ARM_CLIENT_ID }}
+        tenant-id: ${{ secrets.ARM_TENANT_ID }}
+        subscription-id: ${{ secrets.ARM_SUBSCRIPTION_ID }}
      
     - name: Set Azure Credentials as Environment Variables
       run: echo "Azure Credentials Loaded"
