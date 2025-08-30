@@ -10,10 +10,10 @@ jobs:
       uses: little-core-labs/install-terraform@v2.0.0
       with:
        version: 1.13.0
-    - name: Terraform init/plan
-      uses: comu2e/tfnotify-composite-action@1.0.4
-      with:
-    - name: terraform
+    - name: Terraform init
+      run: terraform init
+     
+    
           
     
     
