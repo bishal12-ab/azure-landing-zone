@@ -5,6 +5,13 @@ terraform {
       version = "4.1.0"
     }
   }
+  backend "azurerm" {
+    resource_group_name  = "MICRORG"
+    storage_account_name = "vishalstg"
+    container_name       = "vishcont"
+    key                  = "dev.terraform.tfstate"
+    
+  }
 }
 
 provider "azurerm" {
@@ -14,5 +21,6 @@ provider "azurerm" {
       recover_soft_deleted_key_vaults = true
     }
   }
-  subscription_id = "63ef9ebb-1c15-45fe-9ed2-8deba3e65eed"
+  subscription_id = "b23d929c-5d14-4285-a3cd-840ec9c55cde"
 }
+
