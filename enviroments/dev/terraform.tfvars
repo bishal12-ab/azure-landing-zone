@@ -100,3 +100,25 @@ keyvault-details = {
     purge_protection_enabled    = false
   }
 }
+acr-details = {
+  acr1 = {
+    name                = "bishalacr123"
+    resource_group_name = "bastionrg1"
+    location            = "centralindia"
+    sku                 = "Premium"
+    admin_enabled       = false
+    Environment         = "PROD"
+  }
+}
+aks-details = {
+  aks1 = {
+    name                = "team8910prodaks"
+    location            ="centralindia"
+    resource_group_name = "bastionrg1"
+    dns_prefix          = "aks-1"
+    pool_name           = "team6node"
+    node_count          = 2
+    vm_size             = "standard_a2_v2"
+    Environment         = "development"
+  }
+}

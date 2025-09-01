@@ -6,3 +6,5 @@ variable "nic-details" {}
 variable "vm-details" {}
 variable "bastion-details" {}
 variable "keyvault-details" {}
+variable "acr-details" {}
+variable "aks-details" {}
