@@ -1,7 +1,7 @@
 name: "infra_pipeline"
 on: workflow_dispatch
 jobs:
-  terraform-job:
+  terraform-job-init-plan:
     runs-on: ubuntu-latest
     permissions:
       id-token: write
@@ -38,6 +38,8 @@ jobs:
     - name: Terraform Apply
       run: terraform apply -auto-approve
       working-directory: enviroments/dev
+
+    
      
     
           
