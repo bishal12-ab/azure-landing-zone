@@ -102,7 +102,7 @@ keyvault-details = {
 }
 acr-details = {
   acr1 = {
-    name                = "bishalacr123"
+    name                = "biggestacr12345"
     resource_group_name = "bastionrg1"
     location            = "centralindia"
     sku                 = "Premium"
@@ -112,7 +112,7 @@ acr-details = {
 }
 aks-details = {
   aks1 = {
-    name                = "team8910prodaks"
+    name                = "team8910devaks"
     location            ="centralindia"
     resource_group_name = "bastionrg1"
     dns_prefix          = "aks-1"
