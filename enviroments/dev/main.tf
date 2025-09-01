@@ -40,3 +40,14 @@ module "keyvault" {
   keyvaults  = var.keyvault-details
   depends_on = [module.vm_linux]
 }
+module "acr" {
+  source     = "../../module/ACR"
+  acr        = var.acr-details
+  depends_on = [module.rg]  
+}
+module "aks" {
+  source     = "../../module/AKS"
+  aks        = var.aks-details
+  depends_on = [module.rg, module.acr]
+  
+}
