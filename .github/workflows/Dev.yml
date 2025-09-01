@@ -67,7 +67,10 @@ jobs:
     - name: Terraform apply
       run: terraform apply
       working-directory: enviroments/dev
-     
+    - name: Terraform destroy
+      run: terraform destroy
+      working-directory: enviroments/dev
+      
     
           
     
