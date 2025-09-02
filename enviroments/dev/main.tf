@@ -45,9 +45,9 @@ module "acr" {
   acr        = var.acr-details
   depends_on = [module.rg]  
 }
-module "aks" {
-  source     = "../../module/AKS"
-  aks        = var.aks-details
-  depends_on = [module.rg, module.acr]
+# module "aks" {
+#   source     = "../../module/AKS"
+#   aks        = var.aks-details
+#   depends_on = [module.rg, module.acr]
   
-}
+# }
