@@ -117,7 +117,7 @@ aks-details = {
     resource_group_name = "bastionrg1"
     dns_prefix          = "aks-1"
     pool_name           = "team6node"
-    node_count          = 2
+    node_count          = 1
     vm_size             = "standard_a2_v2"
     Environment         = "development"
   }
