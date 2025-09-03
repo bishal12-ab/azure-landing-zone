@@ -8,3 +8,4 @@ variable "bastion-details" {}
 variable "keyvault-details" {}
 variable "acr-details" {}
 variable "aks-details" {}
+variable "nsg-details" {}
