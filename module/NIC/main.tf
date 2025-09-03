@@ -8,5 +8,6 @@ resource "azurerm_network_interface" "dhondu_nic" {
     name                          = "internal"
     subnet_id                     = data.azurerm_subnet.datasubnetbas[each.key].id
     private_ip_address_allocation = "Dynamic"
+    public_ip_address_id = data.azurerm_public_ip.pipdata[each.key].id
   }
 }

@@ -40,6 +40,18 @@ pip-details = {
     location            = "centralindia"
     allocation_method   = "Static"
   }
+  pip2 = {
+    name                = "frontpip"
+    resource_group_name = "bastionrg1"
+    location            = "centralindia"
+    allocation_method   = "Static"
+  }
+  pip3 = {
+    name                = "backpip"
+    resource_group_name = "bastionrg1"
+    location            = "centralindia"
+    allocation_method   = "Static"
+  }
 }
 bastion-details = {
   bastion1 = {
@@ -59,6 +71,7 @@ nic-details = {
     resource_group_name = "bastionrg1"
     vnet                = "bastion-vnet"
     subname             = "frontsubnet"
+    pip_name           = "frontpip"
   }
   nic2 = {
     name                = "nic-core1"
@@ -66,6 +79,25 @@ nic-details = {
     resource_group_name = "bastionrg1"
     vnet                = "bastion-vnet"
     subname             = "backsubnet"
+    pip_name           = "backpip"
+  }
+}
+nsg-details = {
+  nsg1 = {
+    name                = "nsg-core1"
+    location            = "centralindia"
+    resource_group_name = "bastionrg1"
+    vnet                = "bastion-vnet"
+    subname             = "frontsubnet"
+    nicname             = "nic-core"
+  }
+  nsg2 = {
+    name                = "nsg-core2"
+    location            = "centralindia"
+    resource_group_name = "bastionrg1"
+    vnet                = "bastion-vnet"
+    subname             = "backsubnet"
+    nicname             = "nic-core1"
   }
 }
 vm-details = {
@@ -76,6 +108,7 @@ vm-details = {
     vnet                = "bastion-vnet"
     subname             = "frontsubnet"
     nicname             = "nic-core"
+    pip_name           = "frontpip"
     admin_username      = "admidvishal"
     admin_password      = "adminuser@12345"
   }
@@ -86,6 +119,7 @@ vm-details = {
     vnet                = "bastion-vnet"
     nicname             = "nic-core1"
     subname             = "backsubnet"
+    pip_name           = "backpip"
     admin_username      = "admidvishal"
     admin_password      = "adminuser@12345"
   }

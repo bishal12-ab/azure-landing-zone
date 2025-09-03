@@ -29,6 +29,12 @@ module "nic" {
   nic        = var.nic-details
   depends_on = [module.subnet]
 }
+module "nsg" {
+  source     = "../../module/NSG"
+  nsg        = var.nsg-details
+  depends_on = [module.rg, module.nic]
+  
+}
 module "vm_linux" {
   source     = "../../module/VM"
   vm_linux   = var.vm-details
@@ -45,9 +51,9 @@ module "acr" {
   acr        = var.acr-details
   depends_on = [module.rg]  
 }
-# module "aks" {
-#   source     = "../../module/AKS"
-#   aks        = var.aks-details
-#   depends_on = [module.rg, module.acr]
+module "aks" {
+  source     = "../../module/AKS"
+  aks        = var.aks-details
+  depends_on = [module.rg, module.acr]
   
-# }
+}
