@@ -126,7 +126,7 @@ vm-details = {
 }
 keyvault-details = {
   keyvault1 = {
-    name                        = "keyvault123"
+    name                        = "vishalkeyvault123"
     resource_group_name         = "bastionrg1"
     location                    = "centralindia"
     enabled_for_disk_encryption = true
