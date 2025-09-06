@@ -7,7 +7,7 @@ terraform {
   }
   backend "azurerm" {
     resource_group_name  = "MICRORG"
-    storage_account_name = "vishalstg"
+    storage_account_name = "vishalstg123"
     container_name       = "vishcont"
     key                  = "dev.terraform.tfstate"
     
