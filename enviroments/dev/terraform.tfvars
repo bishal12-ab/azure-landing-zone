@@ -126,7 +126,7 @@ vm-details = {
 }
 keyvault-details = {
   keyvault1 = {
-    name                        = "bastionkeyvault123"
+    name                        = "keyvault123"
     resource_group_name         = "bastionrg1"
     location                    = "centralindia"
     enabled_for_disk_encryption = true
@@ -136,7 +136,7 @@ keyvault-details = {
 }
 acr-details = {
   acr1 = {
-    name                = "biggestacr12345"
+    name                = "bestacr12345"
     resource_group_name = "bastionrg1"
     location            = "centralindia"
     sku                 = "Premium"
