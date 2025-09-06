@@ -152,7 +152,7 @@ aks-details = {
     dns_prefix          = "aks-1"
     pool_name           = "team6node"
     node_count          = 1
-    vm_size             = "Standard_B1ms"
+    vm_size             = "Standard_D2s_v3"
     Environment         = "development"
   }
 }
