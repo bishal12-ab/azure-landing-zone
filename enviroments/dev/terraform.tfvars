@@ -120,8 +120,8 @@ vm-details = {
     nicname             = "nic-core1"
     subname             = "backsubnet"
     pip_name           = "backpip"
-    admin_username      = "admidvishal"
-    admin_password      = "adminuser@12345"
+    # admin_username      = "admidvishal"
+    # admin_password      = "adminuser@12345"
   }
 }
 keyvault-details = {
