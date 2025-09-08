@@ -44,7 +44,7 @@ module "nsg" {
 module "keyvault" {
   source     = "../../module/KEYVAULT"
   keyvaults  = var.keyvault-details
-  depends_on = [module.vm_linux]
+  depends_on = [module.rg]
 }
 module "acr" {
   source     = "../../module/ACR"
