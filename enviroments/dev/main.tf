@@ -35,12 +35,12 @@ module "nsg" {
   depends_on = [module.rg, module.nic]
   
 }
-module "vm_linux" {
-  source     = "../../module/VM"
-  vm_linux   = var.vm-details
-  depends_on = [module.nic]
+# module "vm_linux" {
+#   source     = "../../module/VM"
+#   vm_linux   = var.vm-details
+#   depends_on = [module.nic]
 
-}
+# }
 module "keyvault" {
   source     = "../../module/KEYVAULT"
   keyvaults  = var.keyvault-details
