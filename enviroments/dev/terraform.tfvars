@@ -34,20 +34,26 @@ subnet-details = {
 }
 
 pip-details = {
-  pip1 = {
-    name                = "bastionpip"
-    resource_group_name = "bastionrg1"
-    location            = "centralindia"
-    allocation_method   = "Static"
-  }
-  pip2 = {
-    name                = "frontpip"
-    resource_group_name = "bastionrg1"
-    location            = "centralindia"
-    allocation_method   = "Static"
-  }
+  # pip1 = {
+  #   name                = "bastionpip"
+  #   resource_group_name = "bastionrg1"
+  #   location            = "centralindia"
+  #   allocation_method   = "Static"
+  # }
+  # pip2 = {
+  #   name                = "frontpip"
+  #   resource_group_name = "bastionrg1"
+  #   location            = "centralindia"
+  #   allocation_method   = "Static"
+  # }
   pip3 = {
     name                = "backpip"
+    resource_group_name = "bastionrg1"
+    location            = "centralindia"
+    allocation_method   = "Static"
+  }
+  pip4 = {
+    name                = "loadblancerpip"
     resource_group_name = "bastionrg1"
     location            = "centralindia"
     allocation_method   = "Static"
@@ -154,5 +160,14 @@ aks-details = {
     node_count          = 1
     vm_size             = "Standard_D2s_v3"
     Environment         = "development"
+  }
+}
+loadblacer-details = {
+  lb1 = {
+    name                = "myloadbalancer"
+    resource_group_name = "bastionrg1"
+    location            = "centralindia"
+    pip_name            = "loadblancerpip"
+    pool_name           = "mybackendpool"
   }
 }

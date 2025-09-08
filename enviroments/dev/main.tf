@@ -57,3 +57,8 @@ module "aks" {
   depends_on = [module.rg, module.acr]
   
 }
+module "loadblacer" {
+  source = "../../module/Azure_LB"
+  loadblacer = var.loadblacer-details
+  depends_on = [module.pip, module.nic, module.vm_linux]
+}
