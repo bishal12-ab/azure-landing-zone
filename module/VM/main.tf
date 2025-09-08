@@ -8,7 +8,6 @@ resource "azurerm_linux_virtual_machine" "vm_block" {
   admin_password      = data.azurerm_key_vault_secret.password.value
   network_interface_ids = [data.azurerm_network_interface.networkinterfacedata[each.key].id]
   disable_password_authentication = false
-
   os_disk {
     caching              = "ReadWrite"
     storage_account_type = "Standard_LRS"
