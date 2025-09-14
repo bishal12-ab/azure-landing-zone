@@ -34,18 +34,18 @@ subnet-details = {
 }
 
 pip-details = {
-  # pip1 = {
-  #   name                = "bastionpip"
-  #   resource_group_name = "bastionrg1"
-  #   location            = "centralindia"
-  #   allocation_method   = "Static"
-  # }
-  # pip2 = {
-  #   name                = "frontpip"
-  #   resource_group_name = "bastionrg1"
-  #   location            = "centralindia"
-  #   allocation_method   = "Static"
-  # }
+  pip1 = {
+    name                = "bastionpip"
+    resource_group_name = "bastionrg1"
+    location            = "centralindia"
+    allocation_method   = "Static"
+  }
+  pip2 = {
+     name                = "frontpip"
+     resource_group_name = "bastionrg1"
+     location            = "centralindia"
+    allocation_method   = "Static"
+   }
   pip3 = {
     name                = "backpip"
     resource_group_name = "bastionrg1"
@@ -126,8 +126,8 @@ vm-details = {
     nicname             = "nic-core1"
     subname             = "backsubnet"
     pip_name           = "backpip"
-    # admin_username      = "admidvishal"
-    # admin_password      = "adminuser@12345"
+    admin_username      = "admidvishal"
+    admin_password      = "adminuser@12345"
   }
 }
 keyvault-details = {
