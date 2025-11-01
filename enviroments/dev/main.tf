@@ -8,11 +8,11 @@ module "vnet" {
   vnet       = var.vnet-details
   depends_on = [module.rg]
 }
-module "subnet" {
-  source     = "../../module/SUBNET"
-  subnet     = var.subnet-details
-  depends_on = [module.vnet, module.rg]
-}
+# module "subnet" {
+#   source     = "../../module/SUBNET"
+#   subnet     = var.subnet-details
+#   depends_on = [module.vnet, module.rg]
+# }
 module "pip" {
   source     = "../../module/PIP"
   pip        = var.pip-details
@@ -21,13 +21,13 @@ module "pip" {
 module "bastion" {
   source     = "../../module/BASTION"
   bastion    = var.bastion-details
-  depends_on = [module.rg, module.vnet, module.subnet, module.pip]
+  depends_on = [module.rg, module.vnet, module.pip]
 
 }
 module "nic" {
   source     = "../../module/NIC"
   nic        = var.nic-details
-  depends_on = [module.subnet]
+  depends_on = [module.rg, module.vnet]
 }
 module "nsg" {
   source     = "../../module/NSG"

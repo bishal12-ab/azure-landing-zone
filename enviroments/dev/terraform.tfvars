@@ -10,28 +10,47 @@ vnet-details = {
     resource_group_name = "bastionrg1"
     location            = "centralindia"
     address_space       = ["10.0.0.0/16"]
+
+    subnets = {
+      subnet1 = {
+        name             = "frontsubnet"
+        address_prefixes = ["10.0.1.0/24"]
+      }
+
+      subnet2 = {
+        name             = "backsubnet"
+        address_prefixes = ["10.0.2.0/24"]
+      }
+
+      subnet3 = {
+        name             = "AzureBastionSubnet"
+        address_prefixes = ["10.0.3.0/24"]
+      }
+    }
   }
 }
-subnet-details = {
-  subnet1 = {
-    name                 = "frontsubnet"
-    resource_group_name  = "bastionrg1"
-    virtual_network_name = "bastion-vnet"
-    address_prefixes     = ["10.0.1.0/24"]
-  }
-  subnet2 = {
-    name                 = "backsubnet"
-    resource_group_name  = "bastionrg1"
-    virtual_network_name = "bastion-vnet"
-    address_prefixes     = ["10.0.2.0/24"]
-  }
-  subnet3 = {
-    name                 = "AzureBastionSubnet"
-    resource_group_name  = "bastionrg1"
-    virtual_network_name = "bastion-vnet"
-    address_prefixes     = ["10.0.3.0/24"]
-  }
-}
+
+
+# subnet-details = {
+#   subnet1 = {
+#     name                 = "frontsubnet"
+#     resource_group_name  = "bastionrg1"
+#     virtual_network_name = "bastion-vnet"
+#     address_prefixes     = ["10.0.1.0/24"]
+#   }
+#   subnet2 = {
+#     name                 = "backsubnet"
+#     resource_group_name  = "bastionrg1"
+#     virtual_network_name = "bastion-vnet"
+#     address_prefixes     = ["10.0.2.0/24"]
+#   }
+#   subnet3 = {
+#     name                 = "AzureBastionSubnet"
+#     resource_group_name  = "bastionrg1"
+#     virtual_network_name = "bastion-vnet"
+#     address_prefixes     = ["10.0.3.0/24"]
+#   }
+# }
 
 pip-details = {
   pip1 = {
@@ -52,12 +71,7 @@ pip-details = {
     location            = "centralindia"
     allocation_method   = "Static"
   }
-  pip4 = {
-    name                = "loadblancerpip"
-    resource_group_name = "bastionrg1"
-    location            = "centralindia"
-    allocation_method   = "Static"
-  }
+
 }
 bastion-details = {
   bastion1 = {
@@ -117,6 +131,12 @@ vm-details = {
     pip_name           = "frontpip"
     admin_username      = "admidvishal"
     admin_password      = "adminuser@12345"
+    caching             = "ReadWrite"
+    storage_account_type = "Standard_LRS"
+    publisher          = "Canonical"
+    offer              = "0001-com-ubuntu-server-jammy"
+    sku                = "22_04-lts"
+    version           = "latest"
   }
   vm2 = {
     name                = "backvm2"
@@ -128,6 +148,12 @@ vm-details = {
     pip_name           = "backpip"
     admin_username      = "admidvishal"
     admin_password      = "adminuser@12345"
+    caching             = "ReadWrite"
+    storage_account_type = "Standard_LRS"
+    publisher          = "Canonical"
+    offer              = "0001-com-ubuntu-server-jammy"
+    sku                = "22_04-lts"
+    version           = "latest"
   }
 }
 keyvault-details = {
@@ -144,7 +170,7 @@ acr-details = {
   acr1 = {
     name                = "bestacr12345"
     resource_group_name = "bastionrg1"
-    location            = "eastus"
+    location            = "australiacentral"
     sku                 = "Premium"
     admin_enabled       = false
     Environment         = "PROD"
@@ -153,12 +179,12 @@ acr-details = {
 aks-details = {
   aks1 = {
     name                = "team8910devaks"
-    location            ="eastus"
+    location            ="australiacentral"
     resource_group_name = "bastionrg1"
     dns_prefix          = "aks-1"
     pool_name           = "team6node"
     node_count          = 1
-    vm_size             = "Standard_D2s_v3"
+    vm_size             = "standard_a2_v2"
     Environment         = "development"
   }
 }
