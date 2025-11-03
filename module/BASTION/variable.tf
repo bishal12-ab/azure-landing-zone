@@ -1,3 +1,1 @@
-variable "bastion" {
-  
-}
+variable "bastion" {}

@@ -5,8 +5,6 @@ resource "azurerm_container_registry" "acr" {
   location            = each.value.location
   sku                 = each.value.sku
   admin_enabled       = each.value.admin_enabled
-
-
 tags = {
     Environment = each.value.Environment
   }

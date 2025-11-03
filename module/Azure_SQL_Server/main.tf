@@ -18,6 +18,5 @@ resource "azurerm_mssql_database" "sql_db" {
   license_type = "LicenseIncluded"
   max_size_gb  = each.value.max_size_gb
   sku_name     = "S0"
-  enclave_type = "VBS"
-  
+  enclave_type = "VBS" 
 }
