@@ -62,3 +62,8 @@ module "aks" {
   #loadblacer = var.loadblacer-details
   #depends_on = [module.pip, module.nic, module.vm_linux]
 #}
+module "sql_server" {
+  source     = "../../module/Azure_SQL_Server"
+  sql_server = var.sql_server-details
+  depends_on = [module.rg]
+}
