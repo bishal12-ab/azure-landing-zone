@@ -202,5 +202,6 @@ sql_server_details = {
     administrator_login      = "sqladminuser"
     administrator_login_password = "SqlAdmin@12345"
     db_name                  = "mysqldatabase1"
+    max_size_gb  =  "2"
   }
 }
