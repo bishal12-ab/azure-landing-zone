@@ -9,7 +9,7 @@ terraform {
     resource_group_name  = "myrg""
     storage_account_name = "stgtesting1234"
     container_name       = "testcontainer"
-    key                  = "dev.terraform.tfstate"
+    key                  = "terraform.tfstate"
     
   }
 }
