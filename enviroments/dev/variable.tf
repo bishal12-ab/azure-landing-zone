@@ -9,6 +9,5 @@ variable "keyvault-details" {}
 variable "acr-details" {}
 variable "aks-details" {}
 variable "nsg-details" {}
-variable "loadblacer-details" {
-  
-}
+# variable "loadblacer-details" {}
+variable "sql_server-details" {}

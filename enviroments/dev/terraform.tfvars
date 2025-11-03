@@ -10,18 +10,15 @@ vnet-details = {
     resource_group_name = "bastionrg1"
     location            = "centralindia"
     address_space       = ["10.0.0.0/16"]
-
     subnets = {
       subnet1 = {
         name             = "frontsubnet"
         address_prefixes = ["10.0.1.0/24"]
       }
-
       subnet2 = {
         name             = "backsubnet"
         address_prefixes = ["10.0.2.0/24"]
       }
-
       subnet3 = {
         name             = "AzureBastionSubnet"
         address_prefixes = ["10.0.3.0/24"]
@@ -188,12 +185,23 @@ aks-details = {
     Environment         = "development"
   }
 }
-loadblacer-details = {
-  lb1 = {
-    name                = "myloadbalancer"
-    resource_group_name = "bastionrg1"
-    location            = "centralindia"
-    pip_name            = "loadblancerpip"
-    pool_name           = "mybackendpool"
+# loadblacer-details = {
+#   lb1 = {
+#     name                = "myloadbalancer"
+#     resource_group_name = "bastionrg1"
+#     location            = "centralindia"
+#     pip_name            = "loadblancerpip"
+#     pool_name           = "mybackendpool"
+#   }
+# }
+sql_server-details  ={
+  sql1 = {
+    name                         = "sqlservervishal123"
+    resource_group_name          = "bastionrg1"
+    location                     = "centralindia"
+    version                      = "12.0"
+    administrator_login          = "mradministrator"
+    administrator_login_password = "thisIsDog11"
+    db_name                      = "vishaldatabase1"
   }
 }
