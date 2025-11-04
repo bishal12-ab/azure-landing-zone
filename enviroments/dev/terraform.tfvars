@@ -195,7 +195,7 @@ aks-details = {
 #   }
 # }
 
-sql_server_details = {
+sqlserver-details = {
   sqlserver1 = {
     name                         = "vishalsqlserver123"
     resource_group_name          = "bastionrg1"
