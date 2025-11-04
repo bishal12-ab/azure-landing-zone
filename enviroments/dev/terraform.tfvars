@@ -194,14 +194,17 @@ aks-details = {
 #     pool_name           = "mybackendpool"
 #   }
 # }
-sql_server_details = {
+
+sqlserver_details = {
   sqlserver1 = {
-    name                     = "sqlserver1"
-    resource_group_name      = "bastionrg1"
-    location                 = "centralindia"
-    administrator_login      = "sqladminuser"
+    name                         = "vishalsqlserver123"
+    resource_group_name          = "bastionrg1"
+    location                     = "centralindia"
+    administrator_login          = "sqladminuser"
     administrator_login_password = "SqlAdmin@12345"
-    db_name                  = "mysqldatabase1"
-    max_size_gb  =  "2"
+    minimum_tls_version          = "1.2"
+    version                      = "12.0"
+    database_name                = "vishalsqldb"
+    max_size_gb                  = 10
   }
 }
