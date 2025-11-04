@@ -65,4 +65,5 @@ module "aks" {
 module "azure_mysql" {
   source = "../../module/Azure_SQL_Server"
   sql_server = var.sql_server_details
+  depends_on =[module.rg]
 }
