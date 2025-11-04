@@ -195,7 +195,7 @@ aks-details = {
 #   }
 # }
 
-sqlserver-details = {
+sqlserver_details = {
   sqlserver1 = {
     name                         = "vishalsqlserver123"
     resource_group_name          = "bastionrg1"
@@ -206,6 +206,5 @@ sqlserver-details = {
     version                      = "12.0"
     database_name                = "vishalsqldb"
     max_size_gb                  = 10
-    
   }
 }

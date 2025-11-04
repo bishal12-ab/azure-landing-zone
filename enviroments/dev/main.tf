@@ -64,5 +64,5 @@ module "aks" {
 #}
 module "azure_server_database" {
   source = "../../module/Azure_SQL_Server"
-  sql_server = var.sqlserver-details
+  sql_server = var.sqlserver_details
 }

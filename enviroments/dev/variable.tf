@@ -10,4 +10,4 @@ variable "acr-details" {}
 variable "aks-details" {}
 variable "nsg-details" {}
 # variable "loadblacer-details" {}
-variable "sqlserver-details" {}
+variable "sqlserver_details" {}
