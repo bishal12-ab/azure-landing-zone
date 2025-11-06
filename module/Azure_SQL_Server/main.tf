@@ -11,6 +11,7 @@ resource "azurerm_mssql_server" "sql_server" {
   
 }
 resource "azurerm_mssql_database" "sql_db" {
+depends_on = [ azurerm_mssql_server.sql_server ]
   for_each     = var.sql_server
   name         = each.value.database_name
   server_id    = azurerm_mssql_server.sql_server[ each.key ].id
