@@ -6,6 +6,8 @@ resource "azurerm_linux_virtual_machine" "vm_block" {
   size                            = "Standard_B1s"
   admin_username                  = each.value.admin_username
   admin_password                  = each.value.admin_password
+  # admin_username = data.azurerm_key_vault_secret.username.value
+  # admin_password = data.azurerm_key_vault_secret.password.value
   network_interface_ids           = [data.azurerm_network_interface.networkinterfacedata[each.key].id]
   disable_password_authentication = false
   os_disk {

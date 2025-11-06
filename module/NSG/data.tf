@@ -3,3 +3,5 @@ data "azurerm_network_interface" "networkinterfacedata" {
   name                = each.value.nicname
   resource_group_name = each.value.resource_group_name
 }
+
+
