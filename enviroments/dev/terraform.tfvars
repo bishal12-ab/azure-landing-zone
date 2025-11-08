@@ -4,6 +4,7 @@ rg-details = {
     location = "centralindia"
   }
 }
+
 vnet-details = {
   vnet1 = {
     name                = "bastion-vnet"
