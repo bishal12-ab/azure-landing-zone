@@ -123,6 +123,7 @@ This pipeline setup follows DevSecOps best practices.
 
 
 Infrastructure Pipeline Flow (GitHub Actions / Azure DevOps)
+
 📌 Stage 1 — Pre-Commit Validation
     ✔ Terraform fmt
     ✔ Terraform validate
