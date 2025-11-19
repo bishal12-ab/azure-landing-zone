@@ -68,6 +68,20 @@ Azure SQL Server + Database
     ├── dev.tfvars
     ├── test.tfvars
     └── prod.tfvars
+# 📘 3. Naming Convention (Industry Standard)
+| Resource       | Naming Pattern     | Example        |
+| -------------- | ------------------ | -------------- |
+| Resource Group | `<project>-rg`     | `app-dev-rg`   |
+| VNet           | `<project>-vnet`   | `app-dev-vnet` |
+| Subnet         | `<component>-snet` | `vm-snet`      |
+| VM             | `<project>-vm`     | `app-dev-vm01` |
+| NIC            | `nic-<vm name>`    | `nic-appvm01`  |
+| NSG            | `<project>-nsg`    | `app-dev-nsg`  |
+| ACR            | `<project>acr`     | `appacr`       |
+| AKS            | `<project>-aks`    | `app-dev-aks`  |
+| Storage        | `st<project>`      | `stappdev01`   |
+| Key Vault      | `kv-<project>`     | `kv-appdev`    |
+
    
 
 
