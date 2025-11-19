@@ -121,3 +121,25 @@ This pipeline setup follows DevSecOps best practices.
 | **tfsec**      | Static code analysis for Terraform security |
 | **Checkov**    | Cloud misconfiguration scanning             |
 
+
+Infrastructure Pipeline Flow (GitHub Actions / Azure DevOps)
+📌 Stage 1 — Pre-Commit Validation
+    ✔ Terraform fmt
+    ✔ Terraform validate
+    ✔ TFLint (linting)
+    ✔ Trufflehog (secret scanning)
+
+📌 Stage 2 — Security Scan
+    ✔ tfsec for IaC vulnerabilities
+    ✔ Checkov full infrastructure compliance check
+    ✔ Policy-as-code validation (if enabled)
+
+📌 Stage 3 — Terraform Plan
+    ✔ Generate execution plan
+    ✔ Store plan artifact
+    ✔ Requires manual approval for production
+
+📌 Stage 4 — Terraform Apply
+    ✔ Deploy modular infrastructure
+    ✔ Push state to remote backend (Azure Storage)
+
