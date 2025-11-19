@@ -34,38 +34,40 @@ Load Balancer (AKS Internal/External)
 
 Azure SQL Server + Database
 
-### 📊 Architecture Diagram (Mermaid — GitHub Compatible)
-graph TD;
+2. Low-Level Design (LLD)
+✔ Terraform Folder Structure (Production Ready)
 
-    A[📁 Resource Group] --> B[🌐 Virtual Network]
-
-    B --> C1[🔹 Subnet - VM Subnet]
-    B --> C2[🔹 Subnet - AKS Subnet]
-    B --> C3[🔹 Subnet - Bastion Subnet]
-
-    %% VM Components
-    C1 --> D1[🔌 NIC]
-    D1 --> F1[🛡️ NSG]
-    D1 --> G1[💻 Linux Virtual Machine]
-    D1 --> E1[🌍 Public IP]
-
-    %% Bastion
-    C3 --> H[🛡️ Azure Bastion]
-
-    %% Storage
-    A --> I[💾 Storage Account]
-
-    %% Key Vault
-    A --> J[🔐 Azure Key Vault]
-
-    %% Container Registry
-    A --> K[📦 Azure Container Registry]
-
-    %% AKS
-    C2 --> L[☸️ AKS Cluster]
-    L --> M[⚖️ AKS Load Balancer]
-
-    %% SQL
-    A --> S[🗄️ Azure SQL Server]
+ /Terraform
+│── main.tf
+│── variables.tf
+│── outputs.tf
+│── provider.tf
+│── terraform.tfvars
+│── backend.tf
+│
+├── /modules
+│   ├── /RG
+│   │    ├── main.tf
+│   │    ├── variables.tf
+│   │    ├── outputs.tf
+│   │
+│   ├── /VNET
+│   ├── /SUBNET
+│   ├── /PIP
+│   ├── /NIC
+│   ├── /NSG
+│   ├── /VM
+│   ├── /BASTION
+│   ├── /STORAGE
+│   ├── /KEYVAULT
+│   ├── /ACR
+│   ├── /AKS
+│   ├── /AZURE_SQL_SERVER
+│
+└── /environment
+    ├── dev.tfvars
+    ├── test.tfvars
+    └── prod.tfvars
+   
 
 
