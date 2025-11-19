@@ -104,4 +104,20 @@ Can be accessed using private endpoints
 | AKS             | `aks-<app>-prod`  | aks-webapp-prod  |
 | SQL Server      | `sql-<app>-prod`  | sql-webapp-prod  |
 
+🚀 CI/CD Pipeline Strategy (Infra + Application)
+
+This project uses a secure, production-grade CI/CD workflow leveraging both GitHub Actions / Azure DevOps, designed to ensure:
+
+✔ Zero vulnerabilities
+✔ Fully automated infrastructure deployments
+✔ Secure application container lifecycle
+✔ Continuous monitoring & observability
+
+This pipeline setup follows DevSecOps best practices.
+| Tool           | Purpose                                     |
+| -------------- | ------------------------------------------- |
+| **TFLint**     | Terraform linting & coding standards        |
+| **TruffleHog** | Detects hardcoded secrets in TF code        |
+| **tfsec**      | Static code analysis for Terraform security |
+| **Checkov**    | Cloud misconfiguration scanning             |
 
