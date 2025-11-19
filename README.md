@@ -33,6 +33,7 @@ Azure Key Vault
 SQL Server
 
 SQL Database
+
 graph TD
     A[📁 Resource Group] --> B[🌐 VNet]
 
