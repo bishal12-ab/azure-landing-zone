@@ -88,15 +88,18 @@ Central relational DB
 
 Can be accessed using private endpoints
 
-📘 Naming Conventions (Production Standard)
-Resource Type	Naming Standard	Example
-Resource Group	rg-<app>-prod	rg-webapp-prod
-VNet	vnet-<app>-prod	vnet-webapp-prod
-Subnet	snet-<role>	snet-aks
-VM	vm-<role>-01	vm-jump-01
-NIC	nic-<vm>	nic-jump01
-NSG	nsg-<role>	nsg-vm
-Storage Account	st<app>prod	stwebappprod
-ACR	<app>acr	webappacr
-AKS	aks-<app>-prod	aks-webapp-prod
-SQL Server	sql-<app>-prod	sql-webapp-prod
+## 📘 Naming Conventions (Production Standard)
+
+| Resource Type   | Naming Standard   | Example          |
+|-----------------|-------------------|------------------|
+| Resource Group  | `rg-<app>-prod`   | rg-webapp-prod   |
+| VNet            | `vnet-<app>-prod` | vnet-webapp-prod |
+| Subnet          | `snet-<role>`     | snet-aks         |
+| VM              | `vm-<role>-01`    | vm-jump-01       |
+| NIC             | `nic-<vm>`        | nic-jump01       |
+| NSG             | `nsg-<role>`      | nsg-vm           |
+| Storage Account | `st<app>prod`     | stwebappprod     |
+| ACR             | `<app>acr`        | webappacr        |
+| AKS             | `aks-<app>-prod`  | aks-webapp-prod  |
+| SQL Server      | `sql-<app>-prod`  | sql-webapp-prod  |
+
