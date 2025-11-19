@@ -82,6 +82,67 @@ Azure SQL Server + Database
 | Storage        | `st<project>`      | `stappdev01`   |
 | Key Vault      | `kv-<project>`     | `kv-appdev`    |
 
-   
+ # 📘 4. Terraform Modules Logic (Clear Explanation)
+✔ Resource Group Module
+
+Creates a single centralized RG for all resources.
+
+✔ VNet Module
+
+Deploys main VNet with 3 subnets:
+
+VM Subnet
+
+AKS Subnet
+
+Bastion Subnet
+
+✔ NIC Module
+
+Creates NIC and attaches:
+
+Subnet
+
+NSG
+
+Public IP
+
+✔ NSG Module
+
+Defines inbound/outbound VM rules.
+
+✔ VM Module
+
+Creates Ubuntu VM with:
+
+NIC
+
+Public IP
+
+NSG
+
+Admin Credentials from Key Vault
+
+✔ Bastion Module
+
+Secure remote login to VM (without exposing SSH).
+
+✔ ACR Module
+
+Stores container images to be pulled by AKS.
+
+✔ AKS Module
+
+Creates AKS Cluster with:
+
+Node Pool
+
+ACR Integration
+
+Load Balancer
+
+✔ SQL Server + Database
+
+Deploys managed SQL Database.
 
 
