@@ -26,6 +26,6 @@ Azure Container Registry (ACR)
 
 Azure Kubernetes Service (AKS)
 
-Application Gateway (Internal/External)
+Load Balancer (Internal/External)
 
 Azure Key Vault
