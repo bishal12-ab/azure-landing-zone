@@ -176,3 +176,15 @@ Application CI/CD Workflow
     ✔ Blue/Green deployments
     ✔ Auto rollback on failure
 
+
+    
+📊 3. Monitoring & Observability (Production Setup)
+This architecture uses Prometheus + Grafana for deep observability.
+| Tool                     | Purpose                                            |
+| ------------------------ | -------------------------------------------------- |
+| **Prometheus**           | Metrics collection from AKS & application          |
+| **Grafana**              | Dashboards, alerting & visualization               |
+| **Azure Monitor / logs** | Platform-level logs, metrics & activity monitoring |
+| **Container Insights**   | Real-time pod/node performance                     |
+
+
