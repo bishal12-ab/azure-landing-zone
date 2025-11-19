@@ -1,148 +1,89 @@
-# 🚀 Azure Infrastructure – High-Level + Low-Level Design
+🏗️ Architecture Overview
 
-This repository contains a complete Azure Infrastructure deployment using Terraform Modular Architecture.
-The design follows production-grade standards, secure patterns, and enterprise naming conventions.
+This architecture is designed to support cloud-native workloads, including VM-based admin access, AKS container platforms, secure DevOps pipelines, and a scalable database layer.
 
-# 📘 1. High-Level Architecture (HLD)
-🏗 Azure End-to-End Infrastructure Overview
+The system ensures:
+✔ Zero-trust secure access
+✔ Scalable compute with AKS
+✔ Secure secret management
+✔ CI/CD-ready microservices architecture
+✔ Isolated subnet-level security
+✔ Terraform modular & reusable infra
 
-The following resources are deployed:
+🧩 Infrastructure Components
+Compute
 
-Resource Group
+💻 Virtual Machine (Jump/Worker VM)
 
-Virtual Network & Subnets
+🛡️ Azure Bastion (Secure login)
 
-Network Security Groups
+☸️ Azure Kubernetes Service (AKS)
 
-Public IP
+Networking
 
-Network Interface Card
+🌐 VNet
 
-Linux Virtual Machine
+🔹 VM Subnet
 
-Azure Bastion
+🔹 AKS Subnet
 
-Azure Storage Account
+🔹 Bastion Subnet
 
-Azure Key Vault
+🌍 Public IP
 
-Azure Container Registry (ACR)
+🔌 NIC
 
-Azure Kubernetes Service (AKS)
+🛡️ NSG
 
-Load Balancer (AKS Internal/External)
+Storage & Database
 
-Azure SQL Server + Database
+💾 Storage Account
 
-2. Low-Level Design (LLD)
-✔ Terraform Folder Structure (Production Ready)
+🗄️ Azure SQL Server + SQL Database
 
- /Terraform
-│── main.tf
-│── variables.tf
-│── outputs.tf
-│── provider.tf
-│── terraform.tfvars
-│── backend.tf
-│
-├── /modules
-│   ├── /RG
-│   │    ├── main.tf
-│   │    ├── variables.tf
-│   │    ├── outputs.tf
-│   │
-│   ├── /VNET
-│   ├── /SUBNET
-│   ├── /PIP
-│   ├── /NIC
-│   ├── /NSG
-│   ├── /VM
-│   ├── /BASTION
-│   ├── /STORAGE
-│   ├── /KEYVAULT
-│   ├── /ACR
-│   ├── /AKS
-│   ├── /AZURE_SQL_SERVER
-│
-└── /environment
-    ├── dev.tfvars
-    ├── test.tfvars
-    └── prod.tfvars
-# 📘 3. Naming Convention (Industry Standard)
-| Resource       | Naming Pattern     | Example        |
-| -------------- | ------------------ | -------------- |
-| Resource Group | `<project>-rg`     | `app-dev-rg`   |
-| VNet           | `<project>-vnet`   | `app-dev-vnet` |
-| Subnet         | `<component>-snet` | `vm-snet`      |
-| VM             | `<project>-vm`     | `app-dev-vm01` |
-| NIC            | `nic-<vm name>`    | `nic-appvm01`  |
-| NSG            | `<project>-nsg`    | `app-dev-nsg`  |
-| ACR            | `<project>acr`     | `appacr`       |
-| AKS            | `<project>-aks`    | `app-dev-aks`  |
-| Storage        | `st<project>`      | `stappdev01`   |
-| Key Vault      | `kv-<project>`     | `kv-appdev`    |
+Security
 
- # 📘 4. Terraform Modules Logic (Clear Explanation)
-✔ Resource Group Module
+🔐 Key Vault (Secrets, Keys, Certificates)
 
-Creates a single centralized RG for all resources.
+DevOps Platform
 
-✔ VNet Module
+📦 Azure Container Registry (ACR) (Docker Images)
 
-Deploys main VNet with 3 subnets:
+🔄 Azure DevOps / GitHub Actions CI/CD
 
-VM Subnet
+🧠 Why This Architecture? (Logic + Best Practices Explanation)
+🔒 Security First Approach
 
-AKS Subnet
+No VM has a Public IP (SSH/RDP only via Bastion)
 
-Bastion Subnet
+Key Vault stores DB passwords, SPN secrets, AKS credentials
 
-✔ NIC Module
+NSG restricts traffic
 
-Creates NIC and attaches:
+AKS → ACR authenticated via Managed Identity
 
-Subnet
+🧱 Network Segmentation
 
-NSG
+VM Subnet for admin/jump host
 
-Public IP
+AKS Subnet for Kubernetes Node Pools
 
-✔ NSG Module
+Bastion Subnet for Azure Bastion isolation
 
-Defines inbound/outbound VM rules.
+☸️ Production-Grade AKS Cluster
 
-✔ VM Module
+Integrated with ACR for container images
 
-Creates Ubuntu VM with:
+Supports Load Balancer (internal/external)
 
-NIC
+Supports Blue/Green or Canary Deployments
 
-Public IP
+📦 Image Lifecycle
 
-NSG
+DevOps pipelines build + push Docker images → ACR → AKS pulls → Deployment rollout
 
-Admin Credentials from Key Vault
+🗄️ SQL Server for Application Data
 
-✔ Bastion Module
+Central relational DB
 
-Secure remote login to VM (without exposing SSH).
-
-✔ ACR Module
-
-Stores container images to be pulled by AKS.
-
-✔ AKS Module
-
-Creates AKS Cluster with:
-
-Node Pool
-
-ACR Integration
-
-Load Balancer
-
-✔ SQL Server + Database
-
-Deploys managed SQL Database.
-
-
+Can be accessed using private endpoints
