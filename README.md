@@ -143,3 +143,11 @@ Infrastructure Pipeline Flow (GitHub Actions / Azure DevOps)
     ✔ Deploy modular infrastructure
     ✔ Push state to remote backend (Azure Storage)
 
+    
+🐳 2. Application Build & Deployment Pipeline (DevOps)
+Application is containerized and deployed into AKS using enterprise-grade CI/CD.
+🛡️ Security Tools Integrated for Application
+Tool	Purpose
+Trivy	Vulnerability scanning of Docker images
+SonarQube	Static code analysis (quality + security)
+
