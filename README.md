@@ -30,33 +30,34 @@ Load Balancer (Internal/External)
 
 Azure Key Vault
 
-
 graph TD
-    A[📁 **Resource Group**] --> B[🌐 **VNet**]
+    A[📁 Resource Group] --> B[🌐 VNet]
 
-    B --> C1[🔹 **Subnet – VM Subnet**]
-    B --> C2[🔹 **Subnet – AKS Subnet**]
-    B --> C3[🔹 **Subnet – Bastion Subnet**]
+    B --> C1[🔹 VM Subnet]
+    B --> C2[🔹 AKS Subnet]
+    B --> C3[🔹 Bastion Subnet]
 
-    %% VM Path
+    %% VM
     C1 --> D1[🔌 NIC]
-    D1 --> E1[🌍 Public IP]
     D1 --> F1[🛡️ NSG]
-    D1 --> G1[💻 **Virtual Machine**]
+    D1 --> G1[💻 Virtual Machine]
+    D1 --> E1[🌍 Public IP]
 
     %% Bastion
-    C3 --> H[🛡️ **Azure Bastion**]
+    C3 --> H[🛡️ Azure Bastion]
 
-    %% Other RG Resources
-    A --> I[💾 **Storage Account**]
-    A --> J[🔐 **Azure Key Vault**]
-    A --> K[📦 **Azure Container Registry**]
+    %% Other RG resources
+    A --> I[💾 Storage Account]
+    A --> J[🔐 Key Vault]
+    A --> K[📦 Azure Container Registry]
 
     %% AKS
-    C2 --> L[☸️ **AKS Cluster**]
+    C2 --> L[☸️ AKS Cluster]
     L --> M[⚖️ Load Balancer]
 
-    %% Dependencies
+    %% SQL
+    A --> S[🗄️ SQL Server]
+
     K --> L
     J --> L
 
@@ -69,4 +70,5 @@ graph TD
     style L fill:#d2ecff
     style J fill:#c2e8ff
     style K fill:#c2e8ff
+    style S fill:#d8efff
 
