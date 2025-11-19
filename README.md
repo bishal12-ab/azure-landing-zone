@@ -143,6 +143,8 @@ Infrastructure Pipeline Flow (GitHub Actions / Azure DevOps)
     ✔ Deploy modular infrastructure
     ✔ Push state to remote backend (Azure Storage)
 
+
+
     
 🐳 2. Application Build & Deployment Pipeline (DevOps)
 Application is containerized and deployed into AKS using enterprise-grade CI/CD.
@@ -150,4 +152,27 @@ Application is containerized and deployed into AKS using enterprise-grade CI/CD.
 Tool	Purpose
 Trivy	Vulnerability scanning of Docker images
 SonarQube	Static code analysis (quality + security)
+
+Application CI/CD Workflow
+
+📌 Stage 1 — Code Quality & Security
+    ✔ SonarQube scan
+    ✔ Unit testing
+    ✔ Secrets scanning (GitLeaks optional)
+
+📌 Stage 2 — Build & Scan Container
+    ✔ Docker build
+    ✔ Trivy image scan (High/Critical vulnerabilities blocked)
+    ✔ Push to Azure Container Registry (ACR)
+
+📌 Stage 3 — Deploy to AKS
+    ✔ Update deployment manifests / Helm charts
+    ✔ Patch image tag
+    ✔ kubectl/Helm apply
+    ✔ Health probes validation
+
+📌 Stage 4 — Progressive Delivery (Optional)
+    ✔ Canary rollouts
+    ✔ Blue/Green deployments
+    ✔ Auto rollback on failure
 
