@@ -89,6 +89,7 @@ Central relational DB
 Can be accessed using private endpoints
 
 ## 📘 Naming Conventions (Production Standard)
+## 📘 Naming Conventions (Production Standard)
 
 | Resource Type   | Naming Standard   | Example          |
 |-----------------|-------------------|------------------|
@@ -102,4 +103,5 @@ Can be accessed using private endpoints
 | ACR             | `<app>acr`        | webappacr        |
 | AKS             | `aks-<app>-prod`  | aks-webapp-prod  |
 | SQL Server      | `sql-<app>-prod`  | sql-webapp-prod  |
+
 
