@@ -35,32 +35,32 @@ SQL Server
 SQL Database
 
 graph TD
-    A[📁 Resource Group] --> B[🌐 VNet]
 
-    B --> C1[🔹 VM Subnet]
-    B --> C2[🔹 AKS Subnet]
-    B --> C3[🔹 Bastion Subnet]
+    A[📁 Resource Group] --> B[🌐 Virtual Network (VNet)]
+    
+    B --> C1[🔹 Subnet: VM Subnet]
+    B --> C2[🔹 Subnet: AKS Subnet]
+    B --> C3[🔹 Subnet: Bastion Subnet]
 
-    %% VM
-    C1 --> D1[🔌 NIC]
-    D1 --> F1[🛡️ NSG]
-    D1 --> G1[💻 Virtual Machine]
+    %% VM Components
+    C1 --> D1[🔌 Network Interface (NIC)]
     D1 --> E1[🌍 Public IP]
+    D1 --> F1[🛡️ Network Security Group]
+    D1 --> G1[💻 Virtual Machine (Jump VM)]
 
     %% Bastion
     C3 --> H[🛡️ Azure Bastion]
 
-    %% Other RG resources
+    %% Platform Resources
     A --> I[💾 Storage Account]
-    A --> J[🔐 Key Vault]
-    A --> K[📦 Azure Container Registry]
+    A --> J[🔐 Key Vault (Secrets/Credentials)]
+    A --> K[📦 Azure Container Registry (ACR)]
 
     %% AKS
     C2 --> L[☸️ AKS Cluster]
-    L --> M[⚖️ Load Balancer]
+    L --> M[⚖️ Load Balancer (External / Internal)]
 
     %% SQL
     A --> S[🗄️ SQL Server]
-
-  
+    S --> SD[📘 SQL Database]
 
