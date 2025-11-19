@@ -103,6 +103,9 @@ Can be accessed using private endpoints
 | ACR             | `<app>acr`        | webappacr        |
 | AKS             | `aks-<app>-prod`  | aks-webapp-prod  |
 | SQL Server      | `sql-<app>-prod`  | sql-webapp-prod  |
+|Load Balancer    |  sql-<app>- prod  | todo_lb          |
+|Keyvault         |  key-<app>-prod   |  secret_keyvault |
+|Bastion          |bastion-<app>-prod |  azure_bastion   |
 
 🚀 CI/CD Pipeline Strategy (Infra + Application)
 
