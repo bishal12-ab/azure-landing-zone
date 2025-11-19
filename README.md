@@ -62,17 +62,5 @@ graph TD
     %% SQL
     A --> S[🗄️ SQL Server]
 
-    K --> L
-    J --> L
-
-    style A fill:#0e5ec7,stroke:#ffffff,color:#fff
-    style B fill:#3ea0ff,stroke:#fff
-    style C1 fill:#e0f3ff
-    style C2 fill:#e0f3ff
-    style C3 fill:#e0f3ff
-    style G1 fill:#d2ecff
-    style L fill:#d2ecff
-    style J fill:#c2e8ff
-    style K fill:#c2e8ff
-    style S fill:#d8efff
+  
 
