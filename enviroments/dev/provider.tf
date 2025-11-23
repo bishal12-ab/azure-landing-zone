@@ -20,6 +20,6 @@ provider "azurerm" {
       recover_soft_deleted_key_vaults = true
     }
   }
-subscription_id = "9052aea4-53ec-43db-9bcd-c162b994dae6"
+subscription_id = "e68115ea-4d91-49bd-814a-4725aba743a1"
 }
 
