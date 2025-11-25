@@ -6,9 +6,9 @@ terraform {
     }
   }
   backend "azurerm" {
-    resource_group_name  = "myrg"
-    storage_account_name = "stgtestingvishal"
-    container_name       = "testcontainer"
+    resource_group_name  = "backend_rg"
+    storage_account_name = "rajaranistg"
+    container_name       = "rajaranicontainer"
     key                  = "terraform.tfstate"
     
   }
