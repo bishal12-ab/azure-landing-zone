@@ -156,7 +156,7 @@ vm-details = {
 }
 keyvault-details = {
   keyvault1 = {
-    name                        = "landingzonevault12"
+    name                        = "vishalkeyvault1234568"
     resource_group_name         = "bastionrg1"
     location                    = "centralindia"
     enabled_for_disk_encryption = true
@@ -182,7 +182,7 @@ aks-details = {
     dns_prefix          = "aks-1"
     pool_name           = "team6node"
     node_count          = 1
-    vm_size             = "standard_a2_v2"
+    vm_size             = "standard_b16als_v2"
     Environment         = "development"
   }
 }
