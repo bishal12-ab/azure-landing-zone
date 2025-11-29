@@ -130,7 +130,7 @@ vm-details = {
     admin_username      = "admidvishal"
     admin_password      = "adminuser@12345"
     caching             = "ReadWrite"
-    storage_account_type = "Standard_LRS"
+    storage_account_type = "Standard_A1_v2"
     publisher          = "Canonical"
     offer              = "0001-com-ubuntu-server-jammy"
     sku                = "22_04-lts"
@@ -147,7 +147,7 @@ vm-details = {
     admin_username      = "admidvishal"
     admin_password      = "adminuser@12345"
     caching             = "ReadWrite"
-    storage_account_type = "Standard_LRS"
+    storage_account_type = "Standard_A1_v2"
     publisher          = "Canonical"
     offer              = "0001-com-ubuntu-server-focal"
     sku                = "20_04-lts"
@@ -182,7 +182,7 @@ aks-details = {
     dns_prefix          = "aks-1"
     pool_name           = "team6node"
     node_count          = 1
-    vm_size             = "standard_b16als_v2"
+    vm_size             = "Standard_B2s"
     Environment         = "development"
   }
 }
