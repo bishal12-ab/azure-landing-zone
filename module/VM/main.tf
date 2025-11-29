@@ -3,7 +3,7 @@ resource "azurerm_linux_virtual_machine" "vm_block" {
   name                            = each.value.name
   resource_group_name             = each.value.resource_group_name
   location                        = each.value.location
-  size                            = "Standard_B1s"
+  size                            = "Standard_D2s_v3"
   admin_username                  = each.value.admin_username
   admin_password                  = each.value.admin_password
   # admin_username = data.azurerm_key_vault_secret.username.value

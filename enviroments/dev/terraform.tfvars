@@ -130,7 +130,7 @@ vm-details = {
     admin_username      = "admidvishal"
     admin_password      = "adminuser@12345"
     caching             = "ReadWrite"
-    storage_account_type = "Standard_A1_v2"
+    storage_account_type = "Standard_LRS"
     publisher          = "Canonical"
     offer              = "0001-com-ubuntu-server-jammy"
     sku                = "22_04-lts"
@@ -146,8 +146,9 @@ vm-details = {
     pip_name           = "backpip"
     admin_username      = "admidvishal"
     admin_password      = "adminuser@12345"
+    
     caching             = "ReadWrite"
-    storage_account_type = "Standard_A1_v2"
+    storage_account_type = "Standard_LRS"
     publisher          = "Canonical"
     offer              = "0001-com-ubuntu-server-focal"
     sku                = "20_04-lts"
@@ -175,16 +176,16 @@ acr-details = {
   }
 }
 aks-details = {
-  aks1 = {
-    name                = "team8910devaks"
-    location            ="australiacentral"
-    resource_group_name = "bastionrg1"
-    dns_prefix          = "aks-1"
-    pool_name           = "team6node"
-    node_count          = 1
-    vm_size             = "Standard_B2s"
-    Environment         = "development"
-  }
+ aks1 = {
+  name                = "team8910devaks"
+  location            = "australiacentral"
+  resource_group_name = "bastionrg1"
+  dns_prefix          = "aks-1"
+  pool_name           = "team6node"
+  node_count          = 1
+  vm_size             = "Standard_B2s_v2"
+  Environment         = "development"
+}
 }
 # loadblacer-details = {
 #   lb1 = {
