@@ -7,7 +7,7 @@ terraform {
   }
    backend "azurerm" {
     resource_group_name  = "backend_rg"
-    storage_account_name = "vishalstorage123"
+    storage_account_name = "vishalstorage123455"
     container_name       = "rajaranicontainer"
     key                  = "terraform.tfstate"
     
